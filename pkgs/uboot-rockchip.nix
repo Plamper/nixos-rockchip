@@ -8,17 +8,17 @@ let
       src = fetchFromGitHub {
         owner = "u-boot";
         repo = "u-boot";
-        rev = "v2024.04";
-        sha256 = "IlaDdjKq/Pq2orzcU959h93WXRZfvKBGDO/MFw9mZMg=";
+        rev = "v2025.07";
+        sha256 = "sha256-X+JhVkDudkvQo08hGwAChOeMZZR+iunT9aU6tSAuMmg=";
       };
-      version = "v2024.04-0-g25049ad5608"; # git describe --long
+      version = "v2025.07-0-ge37de002fac"; # git describe --long
     in buildUBoot {
       src = src;
       version = version;
       defconfig = defconfig;
       filesToInstall = [ "u-boot-rockchip.bin" ];
 
-      extraPatches = [ ./ramdisk_addr_r.patch ] ++ extraPatches;
+      extraPatches = extraPatches;
 
       BL31 = BL31;
       ROCKCHIP_TPL = ROCKCHIP_TPL;
